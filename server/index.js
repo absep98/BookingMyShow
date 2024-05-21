@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const userRoutes = require('./routes/userRoutes');
+require('dotenv').config();
 
 mongoose.connect('mongodb+srv://absep98:JdCueWxXPLFqz2tY@cluster0.nn6miwl.mongodb.net/explore?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
