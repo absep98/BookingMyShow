@@ -10,6 +10,8 @@ function Login() {
       const res = await loginUser(values);
       if(res.success){
         message.success(res.message);
+        console.log(message);
+        localStorage.setItem('token', res.token);
         // window.location.href = '/';
         setShouldNavigate(true);
       }else{
