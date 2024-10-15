@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../model/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const authMiddleware = require('../middlewares/authMiddleware')
 
 router.post('/register', async (req, res) => {
     try {
@@ -46,18 +46,28 @@ router.post('/login', async (req, res) => {
                 message: 'Invalid password'
             });
         }
-        const token = jwt.sign({ userId : user._id }, `${process.env.SECRET_KEY}`, expiresIn = '1h');
-
-
+        const token = jwt.sign({ userId : user._id }, `${process.env.SECRET_KEY}`, { expiresIn: '1d' });
+        console.log(token);
+        
         res.send({
             success: true,
+            user: user,
             message: 'User logged in successfully',
-            token: token
+            token: token,
         });
     } catch (error) {
         console.log(error);
     }
-}
-);
+});
+
+router.get('/get-current-user', authMiddleware , async (req, res) => {
+    const user = await User.findById(req.body.userId).select("-password");
+    console.log(user);
+    res.send({
+        success: true,
+        message: 'User authorized successfully',
+        data: user,
+    })
+});
 
 module.exports = router;
