@@ -4,7 +4,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 require('dotenv').config();
 
-mongoose.connect('mongodb+srv://absep98:LAMI21P3NWO2bS2d@cluster0.nn6miwl.mongodb.net/explore?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://absep98:<password>@cluster0.nn6miwl.mongodb.net/explore?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
     console.log('Connected to database');
 })
