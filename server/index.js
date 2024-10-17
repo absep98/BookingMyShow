@@ -4,7 +4,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 require('dotenv').config();
 
-mongoose.connect('mongodb+srv://absep98:<password>@cluster0.nn6miwl.mongodb.net/explore?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://absep98:0YbxQo6Zp71L3eQv@cluster0.nn6miwl.mongodb.net/explore?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
     console.log('Connected to database');
 })
@@ -19,3 +19,5 @@ app.use('/api/users',  userRoutes);
 app.listen(8000, () => {
     console.log('Server is running on port 8000');
 });
+
+// in order to integrate mail service, we need to install nodemailer and sendgrid

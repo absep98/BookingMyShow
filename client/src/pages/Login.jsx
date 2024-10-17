@@ -1,13 +1,13 @@
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 import {Form , Input , Button, message} from 'antd'
-import {Link, Navigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {loginUser} from '../apicalls/user';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/userSlice';
 
 function Login() {
-  const [shouldNavigate, setShouldNavigate] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const submitForm = async (values) => {
     try {
       const res = await loginUser(values);
@@ -16,8 +16,7 @@ function Login() {
         console.log(message);
         localStorage.setItem('token', res.token);
         dispatch(setUser(res.user));
-        // window.location.href = '/';
-        // setShouldNavigate(true);
+        window.location.href = '/';
       }else{
         message.error(res.message);
       }
@@ -26,9 +25,12 @@ function Login() {
       console.log(error);
     }
   }
-  if(shouldNavigate){
-    return <Navigate to="/" />
-  }
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      navigate('/');
+    }
+  }, [])
+
   return (
      <>
       <header className="App-header">

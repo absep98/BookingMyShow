@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { registerUser } from "../apicalls/user";
 import { Form, Input, Button, message } from "antd";
 import {Link} from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
 function Register() {
-
+  const navigate = useNavigate();
   const submitForm = async (values) => {
     try {
       const res = await registerUser(values);
@@ -18,6 +18,13 @@ function Register() {
       console.log(error);
     }
   }
+
+  useEffect(() => { 
+    if(localStorage.getItem('token')){
+      navigate('/');
+    }
+  }, []);
+
 
   return (
     <>
