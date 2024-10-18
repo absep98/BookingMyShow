@@ -1,0 +1,48 @@
+[33mcommit a1e32d900f4b2c89ef763526525ecf985a41a19e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: ac18359 c4387da
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Thu Oct 17 18:02:36 2024 +0530
+
+    Adding logout, profile setup at header
+
+[33mcommit c4387da4268248a5cd1ffcdabeee328626ea936d[m
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Thu Oct 17 19:00:10 2024 +0530
+
+    Adding admin and user UI
+
+[33mcommit ac18359f4fac4aec3dd5e2046c43e4f224d03ab2[m
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Thu Oct 17 18:02:36 2024 +0530
+
+    Adding logout, profile setup at header
+
+[33mcommit e300bca1a4e1876dbcd1e1581a7c915e5e5ff595[m
+Author: absep98 <47417765+absep98@users.noreply.github.com>
+Date:   Tue Oct 15 19:06:17 2024 +0530
+
+    Update index.js
+
+[33mcommit a16d0f96124ec5dfc07b7fd59535c80d73d02fbe[m
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Tue Oct 15 18:29:44 2024 +0530
+
+    Adding the protected route
+
+[33mcommit 6ff58c94886db082518ce4f56de111c2b251dfe4[m
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Wed May 22 02:52:14 2024 +0530
+
+    Starting adding the redux
+
+[33mcommit 05fdb712af8d0adc18d3fc9c2e748be72fffc49f[m
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Wed May 22 00:49:58 2024 +0530
+
+    Generating token and integrating the JWT
+
+[33mcommit 1545394e5458b8eb187fe666d1bb4dfe2a78e30c[m
+Author: Abhishek Sharma <absep98@gmail.com>
+Date:   Sat May 18 17:06:38 2024 +0530
+
+    Pushing in the changes of class 6
