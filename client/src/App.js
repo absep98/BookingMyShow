@@ -12,9 +12,7 @@ import Profile from './pages/Profile';
 
 function App() {
   const { loading } = useSelector((state) => state.loader);
-  const {user} = useSelector((state) => state.user);
-  console.log('user state is ', user);
-  
+  const {user} = useSelector((state) => state.user);  
   console.log(loading);
   return (
     <div className="App">

@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 function Admin() {
   const navigate = useNavigate();
-  const userData = useSelector(state => state.user.data);
+  const userData = useSelector(state => state.user.user);
+  console.log('user Data is ', userData);
+  
   if(!userData?.isAdmin){
     message.warning('You are not authorized to view this page');
     navigate('/profile');

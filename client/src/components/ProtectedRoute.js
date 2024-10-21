@@ -13,7 +13,6 @@ function ProtectedRoute({children}) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { user } = useSelector(state => state.user);
-    console.log('user is ',user);
 
     const navItems = [
         {

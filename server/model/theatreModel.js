@@ -1,86 +1,30 @@
 const mongoose = require('mongoose');
 const theatreSchema = new mongoose.Schema({
-    theatreName: {
+    name: {
+        type: String,
+        required: true
+    },
+    address : {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    isActive: {
+        type: Boolean,
+        default: false
+    }
+});
 
-
-        type: String,
-        required: true
-    },
-    theatreAddress: {
-        type: String,
-        required: true
-    },
-
-    theatreCity: {
-        type: String,
-        required: true
-    },
-    theatreState: {
-        type: String,
-        required: true
-    },
-    theatreZip: {
-        type: String,
-        required: true
-    },
-    theatrePhone: {
-        type: String,
-        required: true
-    },
-    theatreEmail: {
-        type: String,
-        required: true
-    },
-    theatreImage: {
-        type: String,
-        required: true
-    },
-    theatreDescription: {
-        type: String,
-        required: true
-    },
-
-    theatreRating: {
-        type: String,
-        required: true
-    },
-    theatreCapacity: {
-        type: String,
-        required: true
-    },
-    theatreScreen: {
-        type: String,
-        required: true
-    },
-    theatreShow: {
-        type: String,
-        required: true
-    },
-
-
-    theatrePrice: {
-        type: String,
-        required: true
-    },
-    theatreDate: {
-        type: String,
-        required: true
-    },
-    theatreTime: {
-        type: String,
-        required: true
-    },
-    theatreStatus: {
-        type: String,
-        required: true
-    },
-    theatreType: {
-        type: String,
-        required: true
-    },
-
-    theatreSeat: {
-        type: String,
-        required: true
-    },
-    
+const Theatre = mongoose.model('theatres', theatreSchema);
+module.exports = Theatre;
