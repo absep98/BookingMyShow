@@ -1,22 +1,29 @@
 import React from 'react'
+import { Tabs } from 'antd';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { message } from 'antd';
-function Admin() {
-  const navigate = useNavigate();
-  const userData = useSelector(state => state.user.user);
-  console.log('user Data is ', userData);
-  
-  if(!userData?.isAdmin){
-    message.warning('You are not authorized to view this page');
-    navigate('/profile');
-  }
+import TheatresTable from './TheatresTable';
+import MovieList from './MovieList';
 
+function Profile() {
+  const { user } = useSelector(state => state.user);
+  const TabItems = [
+    {
+      key: '1',
+      label: "Movies",
+      children: <MovieList />
+    },
+    {
+      key: '2',
+      label: "Theatre Requests",
+      children: <TheatresTable />
+    }
+  ]
   return (
     <div>
-        <h1>This is Admin page</h1>
+        <h1>Welcome {user.name}! to your Profile</h1>
+        <Tabs defaultActiveKey='1' items={TabItems} />
     </div>
   )
 }
 
-export default Admin;
+export default Profile;
