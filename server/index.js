@@ -4,6 +4,8 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 const theatreRoutes = require('./routes/theatreRoutes');
 const movieRoutes = require('./routes/movieRoutes');
+const showRoutes = require('./routes/showRoutes');
+
 require('dotenv').config();
 
 mongoose.connect('mongodb+srv://absep98:0YbxQo6Zp71L3eQv@cluster0.nn6miwl.mongodb.net/explore?retryWrites=true&w=majority&appName=Cluster0')
@@ -19,6 +21,7 @@ app.use(express.urlencoded());
 app.use('/api/users',  userRoutes);
 app.use('/api/theatres',  theatreRoutes);
 app.use('/api/movies', movieRoutes)
+app.use('/api/shows', showRoutes)
 
 app.listen(8000, () => {
     console.log('Server is running on port 8000');

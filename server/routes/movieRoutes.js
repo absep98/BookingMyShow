@@ -35,7 +35,7 @@ router.get('/get-all-movies', async(req, res) => {
     }
 });
 
-router.get('/movie/:id', async(req, res) => {
+router.post('/movie/:id', async(req, res) => {
     try {
         const movie = await Movie.findById(req.params.id);
         res.send({
