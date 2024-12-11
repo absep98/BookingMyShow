@@ -5,6 +5,13 @@ const userRoutes = require('./routes/userRoutes');
 const theatreRoutes = require('./routes/theatreRoutes');
 const movieRoutes = require('./routes/movieRoutes');
 const showRoutes = require('./routes/showRoutes');
+const bookingRoutes = require('./routes/bookingRoute');
+const cors = require("cors");
+
+app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
 
 require('dotenv').config();
 
@@ -22,6 +29,7 @@ app.use('/api/users',  userRoutes);
 app.use('/api/theatres',  theatreRoutes);
 app.use('/api/movies', movieRoutes)
 app.use('/api/shows', showRoutes)
+app.use('/api/bookings' , bookingRoutes )
 
 app.listen(8000, () => {
     console.log('Server is running on port 8000');
